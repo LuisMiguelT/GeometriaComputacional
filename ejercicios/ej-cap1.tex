@@ -1,0 +1,178 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{exerlist}
+\usepackage{math2}
+\usepackage{amsmath}
+
+\newcommand{\myneg}{\raise.17ex\hbox{$\scriptstyle\sim$}}%
+\newcommand{\mysmallneg}{\raise.17ex\hbox{$\scriptscriptstyle\sim$}}%
+\newcommand{\codlength}[1]{\left< #1 \right>}
+\newcommand{\colvector}[1]{\left(\begin{array}{c} #1 \end{array}\right)}
+\newcommand{\lineal}[1]{\mbox{lin}(#1)}
+\newcommand{\Ppolar}[1]{#1^{\bigtriangleup}}
+\renewcommand{\conv}[1]{\mathrm{conv}(#1)}
+\renewcommand{\cone}[1]{\mathrm{cone}(#1)}
+
+\setlecture{Geometría Discreta}
+\setprofesor{Luis M. Torres}
+\setexamdate{Junio, 2023}
+
+\begin{document}
+\exercisetitle{Ejercicios Capítulo 1}
+
+\begin{exerciselist}
+
+  \item Sean $x_0, x_1, \ldots, x_n \in \RR^d$. Demostrar que las siguientes afirmaciones son equivalentes:
+
+  \begin{exerciselist}
+  \item $x_0, x_1, \ldots, x_n$ son afínmente independientes, es decir, ningún punto puede escribirse como
+  combinación afín de los restantes.
+  \item Los vectores $\binom{1}{x_0}, \binom{1}{x_1}, \ldots, \binom{1}{x_n} \in \RR^{d+1}$ son
+  linealmente independientes.
+  \item Los vectores $x_1-x_0, x_2 - x_0, \ldots, x_n-x_0$ son linealmente independientes.
+  \item Los únicos valores reales que satisfacen $\sum_{i=0}^n \alpha_i x_i = 0$, $\sum_{i=0}^n \alpha_i= 0$
+  son $\alpha_0 = \alpha_1 = \cdots = \alpha_n =0$.
+  \end{exerciselist}
+
+  \item Demostrar que si $G$ y $H$ son dos espacios afines, y si $G \subset H$ (inclusión estricta), entonces $\dim(G) < \dim(H)$.
+
+  \item Demostrar que la intersección de dos conos es un cono.
+
+  \item Demostrar que la intersección de dos conjuntos convexos en un conjunto convexo.
+
+  \item Sean $K \subset \RR^d$  y $y_1, \ldots, y_k \in K$. Considerar $t_1, \ldots, t_k \in \RR$  tales que $t_i \geq 0, \forall i \in \{1, \ldots, k\}$. Demostrar que:
+  $$
+  \sum_{i=1}^k t_i x_i \in \cone{K}.
+  $$
+
+  \item Sean $K \subset \RR^d$  y $x_1, \ldots, x_k \in K$. Considerar $\lambda_1, \ldots, \lambda_k \in \RR$  tales que $\lambda_i \geq 0, \forall i \in \{1, \ldots, k\},$ y $\sum_{i=1}^k \lambda_i = 1$. Demostrar que:
+  $$
+  \sum_{i=1}^k \lambda_i x_i \in \conv{K}.
+  $$
+
+  \item Sea $K \subset \RR^d$. Demostrar que el conjunto
+  $$
+  \setof{\sum_{i=1}^k t_i y_i}{k \in \NN, \, y_1, \ldots, y_k \in K, \, t_1, \ldots, t_k \in \RR_+}
+  $$
+  es un cono convexo que contiene a $K$.
+
+  \item Sea $K \subset \RR^d$. Demostrar que el conjunto
+  $$
+  \setof{\sum_{i=1}^k \lambda_i x_i}{k \in \NN, \, x_1, \ldots, x_k \in K, \, \lambda_1, \ldots, \lambda_k \in \RR, \,  \lambda_i \geq 0, \, \sum_{i=1}^k \lambda_i = 1}
+  $$
+  es un conjunto convexo que contiene a $K$.
+
+  \item Sean $P \subset \RR^d$ y $Q \subset \RR^e$ dos segmentos, con $d \neq e$. Demostrar que $P$ y $Q$  son afínmente equivalentes entre sí.
+
+  \item Sean $x_1, \ldots, x_n \in \RR^d$ y sea $P \subset \RR^d$ el polítopo definido por:
+  $$
+  P:= \conv{\{ x_1, \ldots, x_n \}}.
+  $$
+  \begin{exerciselist}
+  \item Sean $a \in \RR^d$ y $\gamma \in \RR$. Demostrar que si $a^T x_i = \gamma$ se cumple para todo $i \in \{1, \ldots, n\}$, entonces $a^T x = \gamma$ se cumple para todo $x \in P$.
+  \item Considerar la siguiente función lineal:
+  \begin{align*}
+  f :& \RR^d \to \RR\\
+  &x \mapsto f(x) = c^T x
+  \end{align*}
+  para $c \in \RR^d$ fijo. Se definen
+  $$
+  f_m := \min \{f(x_i) \, : \, 1 \leq i \leq n \}
+  \qquad \mbox{y} \qquad
+  f_M := \max \{f(x_i) \, : \, 1 \leq i \leq n \}.
+  $$
+
+  Demostrar que
+  $$
+  f_m \leq f(x) \leq f_M
+  $$
+  se cumple para todo $x \in P$.
+\end{exerciselist}
+
+\item Sean
+$$
+V := \left\{(0,0)^T, (2,0)^T, (1,1)^T, (0,1)^T, (1,0)^T\right\} \subset \RR^2
+$$
+y $P:=\conv{V}$. Graficar $P$ y escribir un sistema de desigualdades lineales cuyo conjunto solución sea $P$.
+
+\item Demostrar la fórmula del \emph{determinante de Vandermonde}:
+$$
+\left|
+\begin{array}{cccc}
+  1 & 1 & \cdots & 1 \\
+  t_0 & t_1 & \cdots & t_d \\
+  \vdots & \vdots & \ddots & \vdots \\
+  t_0^{d-1} & t_1^{d-1} & \cdots & t_d^{d-1} \\
+  t_0^{d} & t_1^{d} & \cdots & t_d^{d}
+\end{array}
+\right| =
+\prod_{0 \leq i < j \leq d} (t_j - t_i),
+$$
+donde $t_0, \ldots, t_d \in \RR$.
+
+\item Demostrar que $d + 1$ puntos distintos sobre la curva de momento en $\RR^d$ son siempre afínmente independientes entre sí.
+
+\item Considerar el polítopo cíclico 
+$$
+c_4(t_1, \ldots, t_6) \subset \RR^4
+$$ 
+obtenido como la envolvente convexa de seis puntos $x_1, \ldots, x_6$ sobre la curva de momento $x: \RR \to \RR^4$, donde $x_i := x(t_i)$ para $i \in \{1, \ldots, 6\}$ y $t_1 < \cdots < t_6$. Enumerar los conjuntos de vértices que forman facetas de este polítopo.
+
+\item Sean $c \in \RR^d$, $\gamma \in \RR$, $V \in \RR^{d \times n}$ y $P := \conv{V} \subset \RR^d$. Considerar el semiespacio $H_+$ de $\RR^d$ delimitado por el hiperplano $c^T x = \gamma$:
+$$
+H_+ := \setof{x \in \RR^d}{c^T x \leq \gamma}.
+$$
+Demostrar que $P$ está enteramente contenido en $H_+$ si y solamente si todos los puntos de $V$ pertenecen a $H_+$.
+
+\item Sea $P \subset \RR^3$ un polítopo de dimensión tres. Suponer que entre cada par de vértices de $P$ existe una arista. Demostrar que $P$ debe ser
+combinatoriamente equivalente a un tetraedro.
+
+
+\item Demostrar que todo polítopo es afínmente isomorfo a la intersección de un ortante con un espacio afín.
+
+\item Demostrar que todo polítopo con $n$ vértices es la proyección de un simplex de dimensión $n$.
+
+\item Demostrar que el polítopo de cruz $\Ppolar{C_d}$ tiene dimensión igual a $d$.
+
+\item Demostrar que el permutaedro $\Pi_{d-1} \subset \RR^d$ tiene dimensión igual a $d-1$.
+
+\item Demostrar que el permutaedro $\Pi_2 \subset \RR^3$ es una proyección del cubo $C_3 \subset \RR^3$ de dimensión tres. Construir para ello una aplicación afín $f: \RR^3 \to \RR^2$ tal que $f(C_3)$ sea afínmente equivalente a $\Pi_2$.
+
+\item Utilizando el resultado de la interpretación combinatoria de las caras de un permutaedro, demostrar que todo vértice de $\Pi_3 \subset \RR^4$ está contenido exactamente en 3 facetas.
+
+\item Dibujar el hipersimplex $\Delta_2(2) \subset \RR^3$.
+
+\item Considerar los siguientes poliedros: $P_1$ es un segmento en $\RR$, $P_2$ es un triángulo en $\RR^2$ y $P_3$ es un cuadrado en $\RR^2$. Definimos a $Q_1$ y $Q_2$ de la siguiente manera:
+\begin{align*}
+Q_1 &:= P_2 \times P_1\\
+Q_2 &:= P_2 \times P_3\\
+\end{align*}
+
+\begin{exerciselist}
+\item Determinar la dimensión de $Q_1$ y $Q_2$.
+\item Indicar el número de caras (de cada dimensión) de $Q_1$ y $Q_2$.
+\item Dibujar los diagramas de Schlegel de $Q_1$ y $Q_2$.
+\end{exerciselist}
+
+\item Sean $P_1$ un triángulo en $\RR^2$, $P_2 \subset \RR^3$ un prisma sobre $P_1$, y $P_3 \subset \RR^4$ una pirámide sobre $P_2$.
+
+\begin{exerciselist}
+\item Indicar la dimensión de $P_3$.
+\item Indicar el número de aristas, vértices, caras de dimensión 2 y facetas de $P_3$.
+\item Indicar el número de caras de dimensión 2 de $P_3$ que son combinatoriamente equivalentes a triángulos, y el número de caras que son combinatoriamente equivalentes a cuadrados.
+\item Dibujar el diagrama de Schlegel de $P_3$.
+\end{exerciselist}
+
+\item Sean $P \subset \RR^3$ un prisma sobre un triángulo y $Q \subset \RR^4$ un prisma sobre $P$. Dibujar los diagramas de Schlegel de $P$ y $Q$.
+
+\item Dibujar el diagrama de Schlegel de un octaedro.
+
+\item Dibujar el diagrama de Schlegel del polítopo de cruz $\Ppolar{C_4}$ de dimensión 4.
+
+\item Dibujar un diagrama de Schlegel de un polítopo cíclico de dimensión 4 con 6 vértices.
+
+\end{exerciselist}
+
+\end{document}

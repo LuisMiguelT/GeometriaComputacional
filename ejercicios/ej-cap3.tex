@@ -1,0 +1,234 @@
+\documentclass[a4paper,12pt]{article}
+
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\usepackage{exerlist}
+\usepackage{math2}
+\usepackage{amsmath}
+
+\newcommand{\myneg}{\raise.17ex\hbox{$\scriptstyle\sim$}}%
+\newcommand{\mysmallneg}{\raise.17ex\hbox{$\scriptscriptstyle\sim$}}%
+\newcommand{\codlength}[1]{\left< #1 \right>}
+\newcommand{\colvector}[2]{{#1 \choose #2}}
+\newcommand{\lineal}[1]{\mbox{lin}(#1)}
+\newcommand{\Ppolar}[1]{#1^{\bigtriangleup}}
+\newcommand{\Pdoblepolar}[1]{#1^{\bigtriangleup \bigtriangleup}}
+\newcommand{\Fpolar}[1]{#1^{\diamond}}
+\renewcommand{\conv}[1]{\mathrm{conv}\left(#1\right)}
+\renewcommand{\cone}[1]{\mathrm{cone}\left(#1\right)}
+\renewcommand{\lin}[1]{\mathrm{lin}\left(#1\right)}
+\newcommand{\aff}[1]{\mathrm{aff}\left(#1\right)}
+\newcommand{\homog}[1]{\mathrm{homog}\left(#1\right)}
+\newcommand{\rango}[1]{\mathrm{rango}\left(#1\right)}
+\newcommand{\relint}[1]{\mathrm{relint}\left(#1\right)}
+\newcommand{\inter}[1]{\mathrm{int}\left(#1\right)}
+\newcommand{\rec}[1]{\mathrm{rec}\left(#1\right)}
+\newcommand{\FF}{\mathcal{F}}
+\newcommand{\HH}{\mathcal{H}}
+\newcommand{\VV}{\mathcal{V}}
+\newcommand{\onevec}{\mathbf{1}}
+\newcommand{\zerovec}{\mathbf{0}}
+
+\setlecture{Geometría Computacional}
+\setprofesor{Luis M. Torres}
+\setexamdate{Agosto, 2021}
+
+\begin{document}
+\exercisetitle{Ejercicios Capítulo 3}
+
+\begin{exerciselist}
+  \item Sea $V \subset \RR^d$ un conjunto finito de puntos. Demostrar que existe $V' \subseteq V$ tal que $V'$ satisface las dos propiedades siguientes:
+  \begin{exerciselist}
+    \item $\conv{V'} = \conv{V}$, y
+    \item ningún punto de $V'$ puede expresarse como combinación convexa de los demás puntos de ese conjunto.
+  \end{exerciselist}
+
+  \item Sean $A \in \RR^{m \times d}$ y $b \in \RR^m$. Demostrar que existen una submatriz de $A$ por filas $A' \in \RR^{m' \times d}$ y un subvector $b' \in \RR^{m'}$, con $m' \leq m$, tal que $A'$ y $b'$ satisfacen las dos propiedades siguientes:
+  \begin{exerciselist}
+    \item $\{ x \in \RR^d \, : \, Ax \leq b \} = \{ x \in \RR^d \, : \, A'x \leq b'\}$, y
+    \item ninguna desigualdad del sistema $A'x \leq b'$ puede obtenerse como combinación de las demás desigualdades.
+  \end{exerciselist}
+
+  \item Sean $P$ un polítopo y $F, G$ dos caras de $P$, con $F \subseteq G$.
+  \begin{exerciselist}
+    \item Demostrar que $F \cap G$ es una cara de $P$.
+    \item Demostrar que $F$ es una cara de $G$.
+    \item Demostrar que si $F \subset G$, entonces $\dim(F) < \dim(G)$.
+  \end{exerciselist}
+
+\item Sean $V = \{v_1, v_2, \ldots, v_n\}$ y $P = \conv{V}$. Suponer que existe $a \in \RR^d$ tal que
+$a^T v_i < a^T v_1$, para todo $i \in \{2, \ldots, n\}$. Demostrar que $v_1$ es un vértice de $P$.
+
+\item Sean $V \subset \RR^d$ un conjunto finito de puntos y $W \subset V$. Suponer que existen $a \in \RR^d$ y $b_0 \in \RR$ tales que $a^T x = b_0$ se cumple para todo $x \in W$, y $a^T x < b_0$ se cumple para todo $x \in V \setminus W$. Demostrar que $\conv{W}$ es una cara de $\conv{V}$.
+
+\item Sean $x_1, x_2, x_3 \in \RR^d$ tales que $x_2 \in \conv{\{ x_1, x_3 \} }$. Sea además $a \in \RR^d$ tal que $a^T x_2 \leq a^T x_3$. Demostrar que $a^T x_1 \leq a^T x_2$.
+
+\item Sean $P$ un poliedro y $F$ una cara no vacía de $P$, minimal respecto a la inclusión (es decir, $F$ no contiene otra cara propia de $P$).
+
+\begin{exerciselist}
+\item Demostrar que $F = \aff{F}$.
+\item Sea $x_0 \in F$. Empleando el resultado de la parte anterior, demostrar que
+$$
+F - x_0 := \{ x - x_0 \, : \, x \in F \},
+$$
+es un espacio vectorial y que $F - x_0 = \lineal{P}$.
+\end{exerciselist}
+
+\emph{Observación:} Recordar que $\aff{F}$ es el conjunto formado por todas las combinaciones afines de elementos de $F$, y que
+$$
+\lineal{P}= \setof{y \in \RR^d}{x + ty \in P, \, \forall x \in P, \, t \in \RR}.
+$$
+
+\item Sean $P=P(A,b) \subset \RR^d$ un polítopo y $x \in P$. Demostrar que los siguientes enunciados son equivalentes:
+\begin{exerciselist}
+\item $x$ es un vértice de $P$.
+\item $x$ no es combinación convexa estricta de dos elementos distintos de $P$,
+es decir, no existen $y, z \in P$, $y \neq z$ tales que $x= ty + (1-t)z$ para algún
+$0 < t <1$.
+\item $P \setminus \{ x \}$ es convexo.
+\item $\rango{A_{=}} = d$, donde $A_{=}$ es la submatriz que contiene todas
+las filas de $A$ que corresponden a desigualdades que $x$ satisface con igualdad.
+\item Existe $c \in \RR^d$ tal que $x$ es la solución óptima única del programa
+lineal $\max\setof{c^T y}{y \in P}$.
+\end{exerciselist}
+
+\item \emph{(Caracterización de puntos interiores relativos de un polítopo).} Sean $P \subseteq \RR^d$ un polítopo con $\dim(P)= k \leq d$, y $y \in P$. Demostrar que las siguientes afirmaciones son equivalentes:
+\begin{exerciselist}
+  \item $y$ no está contenido en una cara propia de $P$.
+  \item Si $a^T x \leq b_0$ es válida para $P$ y $a^T y = b_0$, entonces $a^T x = b_0$ se cumple para todo $x \in P$.
+  \item $y = \sum_{i=0}^{k} \lambda_i x_i$, donde $x_0, \ldots, x_k$ son $k+1$ puntos afínmente independientes de $P$, y $\lambda_i >0$ para todo $i \in \{0, \ldots, k\}$.
+  \item $y = \frac{1}{k+1} \sum_{i=0}^{k} x_i$, donde $x_0, \ldots, x_k$ son $k+1$ puntos afínmente independientes de $P$.
+\end{exerciselist}
+
+\item Demostrar que si $P = \{ x \}$, entonces $P=\relint{P}$. ¿Qué puede decirse acerca de $\inter{P}$?
+
+\item Sean $P$ un polítopo de dimensión 4 y $u$, $v$ dos vértices de $P$. Demostrar
+que existe una arista entre $u$ y $v$ si y sólo si existen al menos tres facetas que
+contienen a $u$ y $v$.
+
+\item Sea $P$ un polítopo tridimensional. Demostrar que $P$ debe contener una faceta
+combinatoriamente equivalente a un triángulo, o un vértice
+$v$ tal que la figura de vértice asociada $P / v$ sea combinatoriamente equivalente
+a un triángulo (o ambas cosas a la vez).\\
+\textbf{Sugerencias:}
+\begin{exerciselist}
+\item Suponer que $P$ tiene $n$ vértices, $e$ aristas y $m$ facetas. Sean además
+$d(i)$ el número de aristas que contienen
+a un vértice $i \in \{1, \ldots, n\}$ (es decir, el grado de $i$) y $r(j)$ el número de aristas contenidas en una faceta $j  \in \{1, \ldots, m\}$ (es decir, el número de lados del polígono formado por esta faceta).
+Demostrar la identidad:
+$$
+\sum_{i=1}^n d(i) = \sum_{j=1}^m  r(j) = 2e.
+$$
+\item Emplear la identidad anterior conjuntamente con la fórmula de Euler para polítopos tridimensionales,
+$$
+n - e + m = 2
+$$
+\end{exerciselist}
+
+\item En los siguientes ejercicios, considerar conjuntos parcialmente ordenados formados por una familia $\FF$ de conjuntos finitos, con la relación de orden dada por la inclusión de conjuntos. Dar ejemplos de $\FF$ para que el poset $(\FF, \subseteq)$ sea:
+\begin{exerciselist}
+\item no acotado
+\item acotado pero no graduado
+\item acotado y graduado, pero no retícula
+\item retícula no graduada
+\end{exerciselist}
+(Se pide un ejemplo en cada caso).
+
+\item Sea $P \subset \RR^3$ un prisma sobre un triángulo.
+\begin{exerciselist}
+  \item Dibujar el diagrama de Hasse de la retícula de caras $L(P)$.
+  \item Seleccionar arbitrariamente un vértice $v$ de $P$, indicar a qué polítopo corresponde la figura de vértice $P/v$ e identificar la retícula $L(P/v)$ dentro del diagrama de $L(P)$.
+  \item Construir un polítopo $P'$ cuya retícula de caras $L(P')$ sea isomorfa a la retícula opuesta a $L(P)$,
+  es decir $L(P') \cong L^{\textrm{op}}(P)$.
+\end{exerciselist}
+
+\item Construir una retícula que satisfaga todas las propiedades del Teorema~3.4, pero que no sea la retícula de caras de un polítopo.
+
+\item Sea $P$ un polítopo con 7 vértices y 7 facetas, cuyas relaciones de inclusión
+están dadas por la siguiente matriz $M$ de incidencia facetas-vértices ($M_{ij}=1$
+si y sólo si el vértice $j$ está contenido en la faceta $i$).
+$$
+M:= \left(
+\begin{array}{ccccccc}
+1 & 1 & 1 & 0 & 0 & 0 & 0 \\
+1 & 0 & 1 & 1 & 0 & 1 & 0 \\
+0 & 1 & 1 & 0 & 1 & 1 & 0 \\
+1 & 1 & 0 & 1 & 1 & 0 & 0 \\
+0 & 0 & 0 & 1 & 0 & 1 & 1 \\
+0 & 0 & 0 & 0 & 1 & 1 & 1 \\
+0 & 0 & 0 & 1 & 1 & 0 & 1 \\
+\end{array}
+\right)
+$$
+\begin{exerciselist}
+\item Determinar la retícula de caras de $P$.
+\item ¿Cuál es la dimensión de $P$? Si $\dim(P) \leq 4$, dibujar (un bosquejo
+de) $P$.
+\end{exerciselist}
+
+\item Un polítopo $P$ tiene cinco vértices $1, \ldots, 5$ y cinco facetas $F_1, \ldots, F_5$. Cada faceta contiene los siguientes vértices:
+\begin{align*}
+F_1 &= \{1, 2, 4, 5\} \qquad &F_2 &= \{1, 2, 3\} \\
+F_3 &= \{2, 3, 4\}  \qquad & F_4 &= \{3, 4, 5\} \\
+F_5 &= \{1, 3, 5\} \\
+\end{align*}
+Reconstruir la retícula de caras de $P$ y determinar la dimensión de $P$.
+
+\item Demostrar que la retícula de caras de un polítopo puede reconstruirse a partir de la información de incidencia entre vértices y facetas, es decir, si se conoce cuáles son los vértices contenidos en cada faceta del polítopo.
+
+\item Sean $P$ un conjunto arbitrario en $\RR^d$ y $\Ppolar{P}$ su conjunto polar.
+Demostrar las siguientes afirmaciones:
+\begin{exerciselist}
+  \item $\Ppolar{P}$ es un conjunto convexo que contiene al origen.
+  \item $P \subseteq \Pdoblepolar{P}$.
+  \item $\Pdoblepolar{P}$ es un conjunto convexo que contiene al origen.
+\end{exerciselist}
+
+\item Sea $P := P(A, \onevec)$. Demostrar que $\zerovec \in \inter{P}$. ¿Qué se concluye en este caso acerca de la dimensión de $P$?
+
+\item Sean $P := P(A, \onevec)$ un polítopo y $F$ una cara de $P$. Demostrar que $A$ puede descomponerse en dos submatrices por filas $A', A''$ que satisfacen las siguientes propiedades:
+\begin{exerciselist}
+  \item $F = \{ x \in \RR^d \, : \, A'x = \onevec \wedge A''x \leq \onevec \}$.
+  \item Si $y \in \relint{F}$, entonces $A'y = \onevec$ y $A''y < \onevec$.
+\end{exerciselist}
+
+\item Sea $P$ una pirámide cuadrada de dimensión 3.
+\begin{exerciselist}
+\item Escribir  la retícula de caras de $P$.
+\item Escribir la retícula de caras de $\Ppolar{P}$.
+\item Determinar qué polítopo es $\Ppolar{P}$. Justificar la respuesta.
+\end{exerciselist}
+
+\item Sea $P$ un polítopo con $0 \in \mathrm{int}(P)$. Sean $F_1, \ldots, F_m$ las facetas y $v_1, \ldots, v_n$ los vértices de $P$. La \emph{matriz de incidencia facetas-vértices} de $P$ es una matriz $M(P) := (m_{ij}) \in \{0, 1\}^{m \times n}$ definida por:
+$$
+m_{ij} = \left\{
+\begin{array}{ll}
+1, & \mbox{ si el vértice $v_j$ está contenido en la faceta $F_i$,}\\
+0, & \mbox{ caso contrario.}
+\end{array}
+\right.
+$$
+Demostrar que $M(P) = M^T(\Ppolar{P})$.
+
+\item Sean $P \subset \RR^d$ un polítopo y $F, G$ dos caras de $P$. Demostrar que:
+\begin{exerciselist}
+  \item $\Fpolar{F}$ es una cara de $\Ppolar{P}$.
+  \item $F \subseteq G \: \Leftrightarrow \: \Fpolar{G} \subseteq \Fpolar{F}$.
+\end{exerciselist}
+
+\item Sean $V:= \{ (2,2), (2, -2), (-2, 1), (-2,-1) \}$ y $P:= \conv{V}$.
+\begin{exerciselist}
+\item Determinar $\Ppolar{P}$ como un sistema de desigualdades lineales.
+\item Graficar $P$ y $\Ppolar{P}$.
+\item Sea $F$ la cara de $P$ que contiene los vértices $(-2, 1)$ y $(-2,-1)$. Determinar $\Fpolar{F}$.
+\end{exerciselist}
+
+\item Un polítopo se dice \emph{autopolar} si es combinatoriamente equivalente con cualquier polítopo con el que sea combinatoriamente polar. Demostrar que el simplex $\Delta_d$ es autopolar para cualquier $d \geq 1$.
+
+\item Demostrar que una pirámide construida sobre un polígono es autopolar. ¿Ocurre lo mismo con pirámides de dimensiones mayores?
+
+\item Demostrar el Teorema~3.13 (Caracterización de polítopos simples) a partir del Teorema~3.12 (Caracterización de polítopos simpliciales), empleando criterios de polaridad.
+
+\end{exerciselist}
+
+\end{document}

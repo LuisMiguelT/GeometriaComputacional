@@ -1,0 +1,121 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                     %
+%   Enviroment for math-exercise sheets, exams, etc                   %
+%   Original version: exerlist.sty                                    %
+%   Author: Luis M. Torres                                            %
+%   Last revision: 30/10/01  by Luis M. Torres                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%% Counters and intern macros
+
+\newcounter{exercisenumi}
+\newcounter{exercisenumii}[exercisenumi]
+\newcounter{propertycount}
+\newcounter{exercisedepth}
+
+\def\makemylabel{%
+\ifcase\value{exercisedepth}%
+\or%
+\arabic{exercisenumi}.\or%
+(\alph{exercisenumii})%
+\fi} 
+
+\def\stepmycounter{%
+\ifcase\value{exercisedepth}%
+\or%
+\stepcounter{exercisenumi}\or%
+\stepcounter{exercisenumii}%
+\fi}
+
+\def\restepmycounter{%
+\ifcase\value{exercisedepth}%
+\or%
+\addtocounter{exercisenumi}{-1}\or%
+\addtocounter{exercisenumii}{-1}%
+\fi}
+
+\def\usemycounter{%
+\ifcase\value{exercisedepth}%
+\or%
+\usecounter{exercisenumi}\or%
+\usecounter{exercisenumii}%
+\fi}
+
+\def\setexerciselistlengths{%
+\ifcase\value{exercisedepth}%
+\or%
+\leftmargin0em%
+\labelwidth3em%
+\labelsep0.5em%
+\or%
+\fi}
+
+
+%%% Enviroment for listing exercises
+%%% Two listing levels allowed
+
+\newenvironment{exerciselist}%
+ {%
+ \addtocounter{exercisedepth}{1}%
+ \stepmycounter%
+ \begin{list}{\makemylabel}{\usemycounter\setexerciselistlengths}%
+ }%
+ {%
+ \end{list}%
+ \restepmycounter%
+ \addtocounter{exercisedepth}{-1}%
+ }
+
+
+%%% Enviroment for enumerating properties
+
+\newenvironment{propertyenum}[1]%
+ {%
+ \setcounter{propertycount}{1}%
+ \begin{list}{{\bf(#1\arabic{propertycount})}}{%
+    \leftmargin3.5em%
+    \labelwidth3em%
+    \labelsep0.5em%
+    \usecounter{propertycount}}%
+ }%
+ {%
+ \end{list}%
+ }
+
+
+%%% Macro for title
+
+\newcommand{\lecture}{Lecture Name}
+\newcommand{\profesor}{Profesor Name}
+\newcommand{\examdate}{Month, Year}
+\newcommand{\setlecture}[1]{\renewcommand{\lecture}{#1}}
+\newcommand{\setprofesor}[1]{\renewcommand{\profesor}{#1}}
+\newcommand{\setexamdate}[1]{\renewcommand{\examdate}{#1}}
+\newcommand{\exercisetitle}[1]%
+{%
+\begin{large}%
+\begin{sc}%
+\noindent
+\lecture\par\par%
+\end{sc}%
+\end{large}
+\begin{normalsize}%
+\noindent
+{\em \profesor \hfill \examdate}\par\par%
+\end{normalsize}%
+\begin{Large}\begin{center}%
+\noindent
+#1\par%
+\end{center}\end{Large}%
+}
+
+%%% Macro for a new sheet
+
+\newenvironment{sheet}[1]%
+{%
+\exercisetitle{#1}%
+}%
+{%
+\cleardoublepage%
+}%

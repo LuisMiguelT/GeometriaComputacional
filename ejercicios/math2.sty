@@ -1,0 +1,391 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%                                                                     %
+%   Macros for common mathematical symbols                            %
+%   Original version: math.sty                                        %
+%   Author: Ralf Bornd"orfer                                          %
+%   Last revision: 30/10/01  by Luis M. Torres                        %
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+ 
+%%% Packages needed
+\usepackage{amssymb}
+%\usepackage{amsthm}
+\usepackage{array}
+\usepackage{rotating}
+\usepackage{theorem}    
+
+%%% Counters and lengths
+\ifx\section\undefined
+  \newcounter{section}
+\fi
+
+\newlength{\mathwidth}
+\ifx\mathindent\undefined
+  \newdimen\mathindent\mathindent=\leftmargini
+\fi
+\setlength{\mathwidth}{\textwidth}
+\addtolength{\mathwidth}{-1.1\mathindent}
+
+%%% Spacing
+\newcommand{\negbaselineskip}{\vspace*{-\baselineskip}}
+\newcommand{\nextline}{$\strut$\newline\nobreak\ignorespaces}
+
+%%% Theorems
+\theoremstyle{change}
+\theoremheaderfont{\bf}
+\setlength\theorempreskipamount{6pt plus 2pt minus 2pt}
+\setlength\theorempostskipamount{4pt plus 1.5pt minus 1.5pt}
+
+\newtheorem{theorem}{\bf Theorem}[section]
+%\newtheorem{algorithm}[mytheorem]{\bf Algorithm}
+\newtheorem{conjecture}[theorem]{\bf Conjecture}
+\newtheorem{corollary}[theorem]{\bf Corollary}
+\newtheorem{definition}[theorem]{\bf Definition}
+\newtheorem{example}[theorem]{\bf Example}
+\newtheorem{lemma}[theorem]{\bf Lemma}
+\newtheorem{model}[theorem]{\bf Model}
+\newtheorem{observation}[theorem]{\bf Observation}
+\newtheorem{problem}[theorem]{\bf Problem}
+\newtheorem{openquest}[theorem]{\bf Open Questions}
+\newtheorem{proposition}[theorem]{\bf Proposition}
+\newtheorem{remark}[theorem]{\bf Remark}
+
+%%% Theorem-like environments
+
+\newenvironment{notation}
+{
+{\bf Notation}
+\begin{quote}
+}
+{
+\end{quote}
+}
+
+%%% Algorithms, etc.
+
+\DeclareRobustCommand{\procname}[1]{\textsf{#1}}
+\DeclareRobustCommand{\problname}[1]{\textsc{#1}}
+\DeclareRobustCommand{\RETURN}[1]{\STATE \textbf{return} #1}
+
+%%% Set names
+\newcommand{\NN}{\mathbb{N}}
+\newcommand{\QQ}{\mathbb{Q}}
+\newcommand{\RR}{\mathbb{R}}
+\newcommand{\Rpos}{\mathbb{R}_{+}}
+\newcommand{\Rpz}{\mathbb{R}_{0}^{+}}
+\newcommand{\ZZ}{\mathbb{Z}}
+\newcommand{\I}{{\cal I}}
+\newcommand{\B}{{\cal B}}
+
+
+%%% symbols (large)
+\newcommand  {\AIJ}   {A_{IJ}}
+\newcommand  {\BCP}   {{\rm BCP}}
+\newcommand  {\BMP}   {{\rm BMP}}
+\newcommand  {\Bi}{{\rm Bi}}
+\newcommand  {\IP}{{\rm IP}}
+\newcommand  {\ISP}   {{\rm ISP}}
+\newcommand  {\Geo}   {{\rm Geo}}
+\newcommand  {\LPSCP} {Q}
+\newcommand  {\LPSPP} {P^=}
+\newcommand  {\LPSSP} {P}
+\newcommand  {\LPSSPH}{H}
+\newcommand  {\NP}{\mbox{${\cal N}\hskip-2pt{\cal P}$}}
+\newcommand  {\coNP}{\mbox{co-}\NP}
+\renewcommand{\P} {\mbox{${\cal P}$}}
+
+%%% symbols (Small)
+\newcommand  {\acs}   {{\tt acs}}
+\newcommand  {\bc}{{\tt BC}}
+\newcommand  {\etc}   {\mbox{etc.}}
+\newcommand  {\one}   {\mathord{\bf 1}}
+\newcommand  {\rmP}   {{\rm P}}
+\newcommand  {\simord}{\mathord{\sim}}
+\newcommand  {\zero}  {\mathord{\bf 0}}
+\newcommand  {\qed}   {\hfill$\square$}
+
+%%% bar and lbar
+\newcommand  {\Abar}  {{\overline{A}}}
+\newcommand  {\Cbar}  {{\overline{C}}}
+\newcommand  {\Dbar}  {{\overline{D}}}
+\newcommand  {\Ebar}  {{\overline{E}}}
+\newcommand  {\Gbar}  {{\overline{G}}}
+\newcommand  {\Ibar}  {{\overline{I}}}
+\newcommand  {\Jbar}  {{\overline{J}}}
+\newcommand  {\Lbar}  {{\overline{L}}}
+\newcommand  {\Pbar}  {{\overline{P}}}
+\newcommand  {\Tbar}  {{\overline{T}}}
+\newcommand  {\Tlbar} {{\underline{T}}}
+\newcommand  {\Vbar}  {{\overline{V}}}
+\newcommand  {\Wbar}  {{\overline{W}}}
+\newcommand  {\abar}  {{\overline{a}}}
+\newcommand  {\alphabar}{{\overline{\alpha}}}
+\newcommand  {\bbar}  {{\overline{b}}}
+\newcommand  {\betabar}{{\overline{\beta}}}
+\newcommand  {\cbar}  {{\overline{c}}}
+\newcommand  {\chibar}{{\overline{\chi}}}
+\newcommand  {\frakCbar}{{\overline{\frakC}}}
+\newcommand  {\nbar}  {{\overline{n}}}
+\newcommand  {\pibar} {{\overline{\pi}}}
+\newcommand  {\rhobar}{{\overline{\rho}}}
+\newcommand  {\rholbar} {{\underline{\rho}}}
+\newcommand  {\sbar}  {{\overline{s}}}
+\newcommand  {\slbar} {{\underline{s}}}
+\newcommand  {\tbar}  {{\overline{t}}}
+\newcommand  {\tlbar} {{\underline{t}}}
+\newcommand  {\ubar}  {{\overline{u}}}
+\newcommand  {\vbar}  {{\overline{v}}}
+\newcommand  {\wbar}  {{\overline{w}}}
+\newcommand  {\xbar}  {{\overline{x}}}
+\newcommand  {\ybar}  {{\overline{y}}}
+\newcommand  {\zbar}  {{\overline{z}}}
+\newcommand  {\zlbar} {{\underline{z}}}
+
+%%% tildes
+\newcommand  {\ctil} {\tilde{c}}
+%%% cal
+\newcommand  {\calA}  {\mathcal{A}}
+\newcommand  {\calAW} {\mathcal{AW}}
+\newcommand  {\calC}  {\mathcal{C}}
+\newcommand  {\calH}  {\mathcal{H}}
+\newcommand  {\calI}  {\mathcal{I}}
+\newcommand  {\calJ}  {\mathcal{J}}
+\newcommand  {\calE}  {\mathcal{E}}
+\newcommand  {\calF}  {\mathcal{F}}
+\newcommand  {\calL}  {\mathcal{L}}
+\newcommand  {\calO}  {\mathcal{O}}
+\newcommand  {\calP}  {\mathcal{P}}
+\newcommand  {\calS}  {\mathcal{S}}
+\newcommand  {\calV}  {\mathcal{V}}
+\newcommand  {\calW}  {\mathcal{W}}
+
+%%% dash
+\newcommand  {\Adash} {{A'}}
+\newcommand  {\Addash}{{A''}}
+\newcommand  {\Cdash} {{C'}}
+\newcommand  {\Cddash}{{C''}}
+\newcommand  {\Edash} {{E'}}
+\newcommand  {\Eddash}{{E''}}
+\newcommand  {\Gdash} {{G'}}
+\newcommand  {\Gddash}{{G''}}
+\newcommand  {\Idash} {{I'}}
+\newcommand  {\Iddash}{{I''}}
+\newcommand  {\IPdash}{{\rm IP}'}
+\newcommand  {\Jdash} {{J'}}
+\newcommand  {\Jddash}{{J''}}
+\newcommand  {\Kdash} {{K'}}
+\newcommand  {\Kddash}{{K''}}
+\newcommand  {\Pdash} {{P'}}
+\newcommand  {\Pddash}{{P''}}
+\renewcommand{\Vdash} {{V'}}
+\newcommand  {\Vddash}{{V''}}
+\newcommand  {\Xdash} {{X'}}
+\newcommand  {\adash} {{a'}}
+\newcommand  {\addash}{{a''}}
+\newcommand  {\alphadash}{{\alpha'}}
+\newcommand  {\bdash} {{b'}}
+\newcommand  {\bddash}{{b''}}
+\newcommand  {\betadash}{{\beta'}}
+\newcommand  {\frakvdash}{{\frakv'}}
+\newcommand  {\frakvddash}{{\frakv''}}
+\newcommand  {\idash} {{i'}}
+\newcommand  {\iddash}{{i''}}
+\newcommand  {\jdash} {{j'}}
+\newcommand  {\mdash} {{m'}}
+\newcommand  {\ndash} {{n'}}
+\newcommand  {\pidash}{{\pi'}}
+\newcommand  {\udash} {{u'}}
+\newcommand  {\uddash}{{u''}}
+\renewcommand{\vdash} {{v'}}
+\newcommand  {\vddash}{{v''}}
+\newcommand  {\wdash} {{w'}}
+\newcommand  {\xdash} {{x'}}
+\newcommand  {\xddash}{{x''}}
+
+%%% dot
+\newcommand  {\AdotF} {A_{\cdot F}}
+\newcommand  {\AdotI} {A_{\cdot I}}
+\newcommand  {\AdotJ} {A_{\cdot J}}
+\newcommand  {\AdotJbar} {A_{\cdot\Jbar}}
+\newcommand  {\AIdot} {A_{I\cdot}}
+\newcommand  {\AJdot} {A_{J\cdot}}
+\newcommand  {\Adoti} {A_{\cdot i}}
+\newcommand  {\Adotj} {A_{\cdot j}}
+\newcommand  {\Adotk} {A_{\cdot k}}
+\newcommand  {\Adotl} {A_{\cdot l}}
+\newcommand  {\Aidot} {A_{i\cdot}}
+\newcommand  {\Ajdot} {A_{j\cdot}}
+\newcommand  {\Akdot} {A_{k\cdot}}
+\newcommand  {\Ardot} {A_{r\cdot}}
+\newcommand  {\Asdot} {A_{s\cdot}}
+\newcommand  {\Atdot} {A_{t\cdot}}
+\newcommand  {\Ydoti} {Y_{\cdot i}}
+\newcommand  {\Ydotj} {Y_{\cdot j}}
+
+%%% frak
+\newcommand  {\frakA} {{\mathfrak A}}
+\newcommand  {\frakC} {{\mathfrak C}}
+\newcommand  {\frakD} {{\mathfrak D}}
+\newcommand  {\frakE} {{\mathfrak E}}
+\newcommand  {\frakEtilde}{\widetilde{\mathfrak E}}
+\newcommand  {\frakF} {{\mathfrak F}}
+\newcommand  {\frakI} {{\mathfrak I}}
+\newcommand  {\frakG} {{\mathfrak G}}
+\newcommand  {\frakGtilde}{\widetilde{\mathfrak G}}
+\newcommand  {\frakP} {{\mathfrak P}}
+\newcommand  {\frakQ} {{\mathfrak Q}}
+\newcommand  {\frakV} {{\mathfrak V}}
+\newcommand  {\frakVtilde}{\widetilde{\mathfrak V}}
+\newcommand  {\frakW} {{\mathfrak W}}
+\newcommand  {\frakn} {{\mathfrak n}}
+\newcommand  {\fraku} {{\mathfrak u}}
+\newcommand  {\frakv} {{\mathfrak v}}
+\newcommand  {\frakw} {{\mathfrak w}}
+
+%%% sim
+\newcommand{\frakEsim}{\frakE/\simord}%
+\newcommand{\frakGsim}{\frakG/\simord}%
+\newcommand{\frakVsim}{\frakV/\simord}%
+
+%%% matrix cones
+\newcommand  {\MSSP}  {M_I}
+\newcommand  {\LMSSP} {M}
+\newcommand  {\LMSSPplus} {M_+}
+\newcommand  {\LNSSP} {N}
+\newcommand  {\LNSSPplus} {N_+}
+
+%%% polyhedra
+\newcommand  {\PASP}  {P_{\rm ASP}}
+\newcommand  {\PATSP} {P_{\rm ATSP}}
+\newcommand  {\PCPP}  {P_{\rm CPP}}
+\newcommand  {\PGPP}  {P_{\rm cap-MCP}}
+\newcommand  {\PkMCP} {P_{k-\rm MCP}}
+%\newcommand  {\PIP}   {P_{\rm IP}}
+\newcommand  {\PISP}  {P_{\rm ISP}}
+\newcommand  {\PLOP}  {P_{\rm LOP}}
+%\newcommand  {\PLP}   {P_{\rm LP}}
+\newcommand  {\PMATCH}{P_{\rm MATCH}}
+\newcommand  {\PMCP}  {P_{\rm MCP}}
+\newcommand  {\PMFP}  {P_{\rm MFP}}
+\newcommand  {\PMKP}  {P_{\rm MKP}}
+%\newcommand  {\PSCP}  {Q_I}
+%\newcommand  {\PSKP}  {P_{\rm SKP}}
+\newcommand  {\PSSP}  {P_I}
+\newcommand  {\PSSPH} {H_I}
+\newcommand  {\PSPP}  {P_I^=}
+\newcommand  {\PSSPsub}{\mathop{\Pcheck_{\rm SSP}}}
+\newcommand{\Pcheck}{{\buildrel\widecheck\over P}}
+\newcommand{\widecheck}{%
+  \lower0.25ex%
+  \hbox{%
+    \smash{%
+      \begin{sideways}%
+         \mbox{%
+            \begin{sideways}%
+               \mbox{$\widehat{\hphantom{P}}$}%
+            \end{sideways}%
+         }%
+      \end{sideways}%
+    }%
+  }%
+}%
+\newcommand  {\PSTP}  {P_{\rm STP}}
+\newcommand  {\PTPP}  {P_{\rm TPP}}
+\newcommand  {\QSP}   {{\rm QSP}}
+\newcommand  {\QSPplus}{\mbox{QSP$_+$}}
+%\newcommand  {\SPP}   {{\rm SPP}}
+%\newcommand  {\SCP}   {{\rm SCP}}
+% \newcommand  {\SSP}   {{\rm SSP}}
+\newcommand  {\THETA} {{\rm TH}}
+\newcommand  {\STAB}[1]{{\rm STAB(}#1{\rm )}}
+% TSP polytopes
+\newcommand  {\QT} {Q^n_T}
+\newcommand  {\QMM} {Q^n_{2M}}
+\newcommand  {\QMMb} {\overline{Q}^n_{2M}}
+
+%%% operators
+\newcommand  {\T} {^{\rm {T\!}}}
+\newcommand  {\abl}   {\mathop{\rm abl}}
+\newcommand  {\argmax}{\mathop{\rm argmax\>\>}}
+\newcommand  {\argmin}{\mathop{\rm argmin\>\>}}
+\newcommand  {\bigdotcup}{%
+  \mathop{%
+    \ignorespaces%
+    \newbox\cupbox\setbox\cupbox=\hbox{$\bigcup$}%
+    \newbox\dotbox\setbox\dotbox=\hbox to\wd\cupbox{\hss$\cdot$\hss}%
+    \rlap{\raise0.3ex\box\dotbox}\box\cupbox\ignorespaces%
+  }%
+}%
+\newcommand  {\bl}{\mathop{\rm bl}}
+\newcommand  {\cone}  {\mathop{\rm cone}}
+\newcommand  {\const} {\mathop{\rm const}}
+\newcommand  {\conv}  {\mathop{\rm conv}}
+\newcommand  {\convergeto} {\mathop{\longrightarrow}\limits}
+\newcommand  {\core}  {\mathop{\rm core}}
+\newcommand  {\diag}  {\mathop{\rm diag}}
+\newcommand  {\diam}  {\mathop{\rm diam}}
+\newcommand  {\dotcup}{%
+   \mathrel{%
+      \ignorespaces%
+      \newbox\cupbox\setbox\cupbox=\hbox{$\cup$}%
+      \newbox\dotbox\setbox\dotbox=\hbox to\wd\cupbox{\hss$\cdot$\hss}%
+      \rlap{\raise0.3ex\box\dotbox}\box\cupbox\ignorespaces%
+   }%
+}%
+\newcommand  {\lin}   {\mathop{\rm lin}}
+\renewcommand{\max}   {\mathop{\rm max\>\>}}
+\renewcommand{\min}   {\mathop{\rm min\>\>}}
+\newcommand{\rank}   {{\rm rank}}
+\newcommand  {\Min}   {\mathop{\rlap{$\min$}\hphantom{\max}}}
+\newcommand  {\opt}   {{\rm opt\>\>}}
+\newcommand  {\supp}  {\mathop{\rm supp}}
+\newcommand  {\then}  {\Longrightarrow}
+\newcommand  {\tr}{\mathop{\rm tr}}
+\renewcommand{\vert}  {\mathop{\rm vert}}
+
+%%% abbreviations
+\newcommand{\displaysum}{\displaystyle\sum}
+\newcommand{\mc}{\multicolumn}
+\newcommand{\rscomment}[1]{\marginpar {{\em #1}}}
+
+%%% math environments
+\newenvironment{matharray}{$\begin{array}}{\end{array}$}
+\newenvironment{proof}[1][\@empty]
+   {\par\noindent{\bf Proof\ifx#1\@empty{}\else{ (#1)}\fi{. }}}
+   {\hfill$\square$\medskip}
+
+
+
+%%% delimiters for sets, norms,etc
+\newcommand{\card}[1]%
+ {%
+ \left| #1 \right|%
+ }%
+\newcommand{\norm}[1]%
+ {%
+ \left|| #1 \right||%
+ }%
+\newcommand{\tabulatedset}[1]%
+ {%
+ \left\{ #1 \right\}%
+ }
+\newcommand{\setof}[2]%
+ {%
+ \left\{ #1 \, : \, #2 \right\}%
+ }
+\newcommand{\floor}[1]{\left\lfloor #1 \right\rfloor}
+\newcommand{\ceil}[1]{\left\lceil #1 \right\rceil}
+
+
+%%% graphs
+\newcommand{\cut}[1]%
+ {%
+ \delta \left( #1 \right)
+ }%
+
+\newcommand{\subjectbreak}{%
+  \begin{center}%
+  *%
+  \end{center}%
+}%
+
+
