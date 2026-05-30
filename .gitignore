@@ -1,0 +1,22 @@
+# Archivos auxiliares de LaTeX
+*.aux
+*.log
+*.out
+*.toc
+*.lof
+*.lot
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.synctex(busy)
+*.bbl
+*.blg
+*.nav
+*.snm
+*.vrb
+
+# Archivos del Finder de MacOS
+.DS_Store
+
+# El PDF lo puedes incluir o excluir según prefieras
+# *.pdf
