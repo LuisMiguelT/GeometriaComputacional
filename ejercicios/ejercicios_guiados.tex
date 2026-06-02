@@ -276,6 +276,16 @@ entonces
 \item Partiendo de un segmento, ¿qué polítopos se obtienen al aplicar sucesivamente la operación de construir una bipirámide?
 
 \item Partiendo de un segmento, ¿qué polítopos se obtienen al aplicar sucesivamente la operación de construir un prisma?
+\item Sean $V = \{ x_1, \ldots, x_n \} \subset \mathbb{R}^d$ y $P=\conv{V}$. Dados $a \in \mathbb{R}^d$ y $c \in \mathbb{R}$, se define el subconjunto $S$ de $V$ como
+\[
+S = \{ v \in V : a^T v = c \}.
+\]
+Demuestre que $\conv{S}$ es una cara de $P$ si y solamente si $a^T v - c$ tiene el mismo signo para todo $v \in V\setminus S$.
+\item Sea $V = \{ x_1, \ldots, x_n \}$ un conjunto finito de puntos en $\mathbb{R}^d$ tal que ningún punto está en la envolvente convexa de los demás. Suponer que $P=\conv{V}$ es un polítopo simplicial, con $\dim(P)=d$. Sea $S \subset V$ un subconjunto de $V$ tal que $|S|=d$ y $\dim(\text{aff}(S))=d-1$.
+\begin{exerciselist}
+\item Demostrar que existe una función afín $F_S : \mathbb{R}^d \to \mathbb{R}$ tal que $F_S(x)=0$ para todo $x \in S$.
+\item Demostrar que $\conv{S}$ es una faceta de $P$ si y solamente si y $F_S(x)$ tiene el mismo signo para todo $x \in V\setminus S$.
+\end{exerciselist}
 \end{exerciselist}
 
 
