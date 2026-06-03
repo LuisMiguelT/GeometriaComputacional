@@ -288,6 +288,51 @@ Demuestre que $\conv{S}$ es una cara de $P$ si y solamente si $a^T v - c$ tiene 
 \end{exerciselist}
 \end{exerciselist}
 
+\noindent\textbf{Poliedros y optimización lineal}
+\begin{exerciselist}
+\item Sean $V= \{ x_1, \ldots, x_n \} \subset \mathbb{R}^d$, $P=\conv{V}$ y $c \in \mathbb{R}^d$. Demostrar que
+$$
+\max \{ c^T x : x \in P \} = \max \{ c^T x : x \in V \}.
+$$
+\item Sean $V= \{ x_1, \ldots, x_n \} \subset \mathbb{R}^d$, $Y= \{ y_1, \ldots, y_k \} \subset \mathbb{R}^d$, y $c \in \mathbb{R}^d$. Definimos:
+$$
+P = \{ x + y : x \in \conv{V}, y \in \cone{Y} \}.
+$$
+Demostrar que
+\begin{exerciselist}
+\item Si existe $y \in Y$ tal que $c^T y > 0$, entonces para todo $\alpha \in \mathbb{R}$, existe $x \in P$ tal que $c^T x > \alpha$, lo que implica que $\max \{ c^T x : x \in P \} = +\infty$.
+\item Si $c^T y \leq 0$ para todo $y \in Y$, entonces
+$$
+\max \{ c^T x : x \in P \} = \max \{ c^T x : x \in V\}.
+$$
+\end{exerciselist}
+\end{exerciselist}
+
+\noindent\textbf{Teorema de Minkowski-Weyl}
+\begin{exerciselist}
+    \item Sean $A \in \mathbb{R}^{m \times d}$, $b \in \mathbb{R}^m$ y $P = \{ x \in \mathbb{R}^d : Ax \leq b \}$. Definimos
+    \[
+    C(P) = \left\{ {x_0 \choose x} \in \mathbb{R}^{d+1} : -x_0 b + A x \leq 0 \right\}.
+    \]
+    Demostrar que 
+    $$
+    P = \left\{ x \in \mathbb{R}^d : {1 \choose x} \in C(P) \right\}.
+    $$
+    \item Sean $V \in \mathbb{R}^{d \times n}$, $Y \in \mathbb{R}^{d \times k}$ y $P = \conv{V} + \cone{Y}$. Definimos
+    \[
+    C(P) = \textrm{cone}\left(\begin{array}{cc}
+        \mathbf{1}^T & \mathbf{0}^T\\
+        V & Y
+    \end{array}\right),
+    \]
+    con $\mathbf{1} \in \mathbb{R}^n$ y $\mathbf{0} \in \mathbb{R}^k$. Demostrar que 
+    $$
+    P = \left\{ x \in \mathbb{R}^d : {1 \choose x} \in C(P) \right\}.
+    $$
+\end{exerciselist}
+
+
+
 
 
 \end{document}
