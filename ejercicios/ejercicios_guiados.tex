@@ -370,8 +370,36 @@ $$\left\{\begin{aligned}
 Encontrar un conjunto finito de vectores $Y$ tal que $C = \cone{Y}$.
 \end{exerciselist}
 
+\noindent\textbf{Propiedaddes de las caras de un polítopo}
 
+\begin{exerciselist}
 
+\item Sea $V=\{v_1, \ldots, v_n\} \subset \mathbb{R}^d$. Suponer que existe $i \in \{1, \ldots, n\}$ tal que $v_i \in \conv{V\setminus\{v_i\}}$. Demostrar que $\conv{V}=\conv{V\setminus\{v_i\}}$.
 
+\item Sean $P$ un poliedro y $v$ un vértice de $P$. Demostrar que existen $a \in \mathbb{R}^d$ y $b \in \mathbb{R}$ tales que
+$$
+a^T v = b,
+\qquad \text{y} \qquad
+a^T x < b \quad \forall x \in P\setminus\{v\}.
+$$
+
+\item Sean $P$ un polítopo y $v$ un vértice de $P$. Demostrar que $v \not\in \conv{P\setminus\{v\}}$.
+
+\item Sean $V=\{v_1, \ldots, v_n\} \subset \mathbb{R}^d$ y $P=\conv{V}$. Suponer que, para un cierto $v_i \in V$, existen $a \in \mathbb{R}^d$ y $b \in \mathbb{R}$ tales que
+$$
+a^T v_i = b,
+\qquad \text{y} \qquad
+a^T x < b \quad \forall x \in V\setminus\{v_i\}.
+$$
+Demostrar que $v_i$ es un vértice de $P$.
+
+\item Sean $P$ un polítopo y $F$ una cara de $P$. Demostrar que
+$$
+F = P \cap \text{aff}(F).
+$$
+
+\item Sean $P$ un polítopo y $F_1$, $F_2$ dos caras de $P$. Demostrar que $F_1 \cap F_2$ es una cara de $P$.
+
+\end{exerciselist}
 
 \end{document}
