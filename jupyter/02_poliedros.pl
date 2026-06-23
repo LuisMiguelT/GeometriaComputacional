@@ -83,4 +83,15 @@ print($p->VERTICES_IN_FACETS);
 $c2=recession_cone($p);
 $c2->VISUAL;
 
+$c=new Polytope(POINTS=>[[1,1,0,0,0],[1,0,1,0,0],[1,0,0,1,0],[1,0,0,0,1],[1,0,0,0,0], [1,1,1,0,0],[1,0,1,0,2]]);
+
+$q=new Polytope(POINTS=>[[1,1,1,-1],[1,-1,1,-1],[1,1,-1,-1],[1,-1,-1,-1],[1,0,1,1], [1,-1,-1,1],[1,1,-1,1]]);
+
+$r=new Polytope(POINTS=>[[1,-1,1],[1,1,1],[1,-2,0],[1,2,0],[1,-1,-1], [1,1,-1]]);
+$r2=bipyramid($r);
+$r2->VISUAL;    
+$r3=prism($r2);
+$r3->SCHLEGEL;
+print $r3->HASSE_DIAGRAM->nodes_of_dim(2)->size;
+print map { $r3->HASSE_DIAGRAM->FACES->[$_], "\n" } @{$r3->HASSE_DIAGRAM->nodes_of_dim(2)};
 
