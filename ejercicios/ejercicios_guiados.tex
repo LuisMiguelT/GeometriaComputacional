@@ -13,7 +13,8 @@
 \newcommand{\codlength}[1]{\left< #1 \right>}
 \newcommand{\colvector}[1]{\left(\begin{array}{c} #1 \end{array}\right)}
 \newcommand{\lineal}[1]{\mbox{lin}(#1)}
-\newcommand{\Ppolar}[1]{#1^{\bigtriangleup}}
+\newcommand{\polar}[1]{#1^{\bigtriangleup}}
+\newcommand{\doblepolar}[1]{#1^{\bigtriangleup\bigtriangleup}}
 \renewcommand{\conv}[1]{\mathrm{conv}(#1)}
 \renewcommand{\cone}[1]{\mathrm{cone}(#1)}
 
@@ -370,8 +371,56 @@ $$\left\{\begin{aligned}
 Encontrar un conjunto finito de vectores $Y$ tal que $C = \cone{Y}$.
 \end{exerciselist}
 
+\noindent\textbf{Propiedades de las caras de un polítopo}
 
+\begin{exerciselist}
 
+\item Sea $V=\{v_1, \ldots, v_n\} \subset \mathbb{R}^d$. Suponer que existe $i \in \{1, \ldots, n\}$ tal que $v_i \in \conv{V\setminus\{v_i\}}$. Demostrar que $\conv{V}=\conv{V\setminus\{v_i\}}$.
+
+\item Sean $P$ un poliedro y $v$ un vértice de $P$. Demostrar que existen $a \in \mathbb{R}^d$ y $b \in \mathbb{R}$ tales que
+$$
+a^T v = b,
+\qquad \text{y} \qquad
+a^T x < b \quad \forall x \in P\setminus\{v\}.
+$$
+
+\item Sean $P$ un polítopo y $v$ un vértice de $P$. Demostrar que $v \not\in \conv{P\setminus\{v\}}$.
+
+\item Sean $V=\{v_1, \ldots, v_n\} \subset \mathbb{R}^d$ y $P=\conv{V}$. Suponer que, para un cierto $v_i \in V$, existen $a \in \mathbb{R}^d$ y $b \in \mathbb{R}$ tales que
+$$
+a^T v_i = b,
+\qquad \text{y} \qquad
+a^T x < b \quad \forall x \in V\setminus\{v_i\}.
+$$
+Demostrar que $v_i$ es un vértice de $P$.
+
+\item Sean $P$ un polítopo y $F$ una cara de $P$. Demostrar que
+$$
+F = P \cap \text{aff}(F).
+$$
+
+\item Sean $P$ un polítopo y $F_1$, $F_2$ dos caras de $P$. Demostrar que $F_1 \cap F_2$ es una cara de $P$.
+
+\end{exerciselist}
+
+% \noindent\textbf{Ejercicios en polymake}
+% \begin{exerciselist}
+%   \item Sea $P$ el polítopo en $\mathbb{R}^4$ definido por $P=\conv{V}+\cone{Y}$, con
+%   \item 
+% \end{exerciselist}
+
+\noindent\textbf{Polaridad}
+\begin{exerciselist}
+  \item Sean $P$ y $Q$ dos conjuntos en $\mathbb{R}^d$. Demostrar que si $P \subseteq Q$, 
+  entonces $\polar{Q} \subseteq \polar{P}$, y $\doblepolar{P} \subseteq \doblepolar{Q}$.
+
+  \item Sea $P \subset \mathbb{R}^d$. Demostrar que $P \subseteq \doblepolar{P}$.
+
+  \item Sea $P \subset \mathbb{R}^d$. Demostrar que $\polar{P}$ es un conjunto convexo 
+  y que $0 \in \polar{P}$.
+
+  \item Demostrar que si $P$ es un polítopo y $0 \in P$, entonces $\doblepolar{P} = P$.
+\end{exerciselist}
 
 
 \end{document}
