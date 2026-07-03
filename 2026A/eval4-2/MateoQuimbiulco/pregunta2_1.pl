@@ -8,12 +8,16 @@ print "VERTICES DE P:";
 print ($p->VERTICES);
 print "RAYOS DE P:";
 print ($p->RAYS);
-print "FACETAS DE P"
+# LMT : Agregué ; al final de la línea siguiente
+print "FACETAS DE P";
 print_constraints($p->FACETS);
 my $rc = recession_cone($p);
 print "RAYOS:";
 print ($rc->RAYS);
-print "FACETAS"
+# LMT : Agregué ; al final de la línea siguiente
+print "FACETAS";
 print_constraints($rc->FACETS);
 
-
+# LMT: Diferenciar entre vértices y rayos de P
+# LMT: No compilaba (faltaban dos ; al final de las líneas 12 y 18)
+# LMT: 0,8/1

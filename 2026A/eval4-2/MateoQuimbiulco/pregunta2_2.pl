@@ -20,6 +20,8 @@ print ($p->VERTICES_IN_FACETS);
 print "DIMENSION DE P:";
 print $p->DIM;
 #LITERAl 2)
-print $p->SCHLEGEL;
+#print $p->SCHLEGEL;
 #LITERAL 3)
 $p->HASSE_DIAGRAM->VISUAL;
+
+# LMT: 1/1

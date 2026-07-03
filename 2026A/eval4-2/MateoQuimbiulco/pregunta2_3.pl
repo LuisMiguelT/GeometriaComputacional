@@ -2,7 +2,7 @@ use application "polytope";
 #MATEO QUIMBIULCO
 #PREGUNTA 3
 my $p = new Polytope(INEQUALITIES=>[
-  [2, 2, -1, -1],
+  [2, 2, -1, -1], 
   [2, -2, -1, -1],
   [7, 2, -3, -3],
   [1, 1, 0, 0],
@@ -32,3 +32,5 @@ print map {$_, ": ", $q->HASSE_DIAGRAM->nodes_of_dim($_)->size,"\n" } (-1..4);
 
 #RESPUESTA PREGUNTA:
 #En total existen 16 facetas, de donde 12 de ellas son tetraedros, mientras que las otras 4 son piramides de base cuadrada.
+
+# LMT : 1/1

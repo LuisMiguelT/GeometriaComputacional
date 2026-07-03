@@ -29,11 +29,12 @@ print("Incidencias Vertices-Facetas  \n");
 print($p -> VERTICES_IN_FACETS);
 print "\n";
 
-print("Dimencion: ");
+print("Dimencion: "); #Dimensión
 print $p->DIM;
 print "\n";
 
-$p->SCHLEGEL;
+# $p->SCHLEGEL;
 
 $p->HASSE_DIAGRAM->VISUAL;
 
+# LMT: 1/1

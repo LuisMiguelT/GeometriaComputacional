@@ -31,4 +31,6 @@ print "\n";
 # Visualización
 $p -> VISUAL;
 $p -> SCHLEGEL;
-print("No se puso hacer el diagrama de SCHLEGEL ya que P no es acotado");
+print("No se pudo hacer el diagrama de SCHLEGEL ya que P no es acotado");
+
+# LMT: 1/1

@@ -18,7 +18,9 @@ print($p3 -> VERTICES);
 print_constraints($p3 -> FACETS);
 ##
 print($p3 -> N_VERTICES);
+print("\n");
 print($p3 -> N_FACETS);
+print("\n");
 ##
 print($p3 -> VERTICES_IN_FACETS);
 ##
@@ -28,6 +30,9 @@ $p3 -> SCHLEGEL;
 
 ## 2 Prirámides en R3 con base hexagonal(Serían como las tapas del prisma)
 ## 6 lados del prisma serán un prisma en R3 con base triangular
-## 1 Prisma en R3 con base exagonal
+## 1 Prisma en R3 con base hexagonal
 
 # 9 Facetas
+
+# LMT: 1/1
+

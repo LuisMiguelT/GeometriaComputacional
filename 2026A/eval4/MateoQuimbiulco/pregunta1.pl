@@ -11,3 +11,6 @@ print $p3 ->SCHLEGEL;
 
 #DESCRIPCION DE LAS FACETAS:
 #P3 es un objeto de dimension 4, por lo que sus facetas son politopos de dimension 3. La base y la tapa del objeto son piramides hexagonales, mientras que las facetas laterales son 6 prismas triangulares y ademas se forma en el centro 1 prisma hexagonal. Teniendo asi un total de 9 facetas. 
+
+# LMT: Número de vértices y facetas?
+# LMT: 0,8/1

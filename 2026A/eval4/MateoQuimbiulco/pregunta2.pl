@@ -11,6 +11,7 @@ print "Coordenadas de Vertices: ";
 print $p2->VERTICES;
 print "Desigualdades lineales Facetas: ";
 print_constraints $p2->FACETS;
+# LMT : Incidencia Vertice-Faceta:
 print "Indice Vertice-Faceta:";
 print $p2->VERTICES_IN_FACETS;
 print $p2 ->SCHLEGEL;
@@ -29,6 +30,9 @@ print $p3 ->SCHLEGEL;
 
 #DESCRIPCION DE LAS FACETAS P2:
 #P2 es un objeto en R^3, por lo tanto sus facetas seran triangulos en R^2, provenientes de unir cada uno de los vertices del pentagono tanto con el punto por encima como por debajo del hiperplano en el que se encuentra originalmente. Es decir, existen 10 facetas. 
+# LMT: No es así cómo aparecen las facetas de P2. Las facetas de P2 son 10 triángulos, pero no se forman uniendo cada vértice del pentágono con los dos vértices nuevos. 
 
 #DESCRIPCION DE LAS FACETAS DE P3:
 #P3 es un objeto en R^4, por lo que sus facetas estaran en R^3, en este caso, se dispone de la faceta de la base que sera la bipiramide construida, mientras que las facetas laterales seran tetraedros y seran 10 de ellos, al proceder de un pentagono regular. En total existen 11 facetas.
+
+# LMT: 1/1

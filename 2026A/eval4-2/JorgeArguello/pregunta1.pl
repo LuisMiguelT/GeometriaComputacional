@@ -18,13 +18,16 @@ print_constraints($p -> FACETS);
 print "\n";
 
 
-#Cono regreción 
+#Cono regreción  RECESION 
 my $crp = recession_cone($p);
 
-print("Facetas del cono de regrecion de P: \n");
+print("Facetas del cono de regrecion de P: \n"); #RECESION
 print($crp -> FACETS);
 print "\n";
 
-print("Rayos del cono de regrecion de P: \n");
+print("Rayos del cono de regrecion de P: \n"); #RECESION
 print($crp -> RAYS);
 print "\n";
+
+# LMT: Diferenciar entre vértices y rayos de P
+# LMT: 0,9/1

@@ -77,3 +77,5 @@ print "\n";
 print("Incidencias Vertices-Facetas  \n");
 print($p3 -> VERTICES_IN_FACETS);
 print "\n";
+
+# LMT : 1/1

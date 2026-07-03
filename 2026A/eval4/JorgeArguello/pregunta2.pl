@@ -15,8 +15,11 @@ my $p3 = pyramid($p2);
 
 # Caracteristicas de P2
 ##  
+print("Características de P2:\n");
 print($p2 -> N_VERTICES);
+print("\n");
 print($p2 -> N_FACETS);
+print("\n");
 ##
 print($p2 -> VERTICES);
 ##
@@ -29,8 +32,11 @@ $p2 -> SCHLEGEL;
 
 # Caracteristicas de P3
 ##  
+print("Características de P3:\n");
 print($p3 -> N_VERTICES);
+print("\n");
 print($p3 -> N_FACETS);
+print("\n");
 ##
 print($p3 -> VERTICES);
 ##
@@ -49,6 +55,8 @@ $p3 -> SCHLEGEL;
 # Como es un pirámide con base P2; primero. Tendremos la faceta "Base" que será P2, es decir, una de las facetas será una pirámide en R3 con base pentagonal.
 # Además de cada una de las facetas de P2 se usará de base para nuevas pirámides. En este caso tendremos 10 nuevas facetas con forma de pirámides en R3 de base triangular. 
 # En Total: P3 tiene 11 facetas. 
+
+# LMT: 1/1
 
 
 
